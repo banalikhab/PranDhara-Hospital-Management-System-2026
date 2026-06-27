@@ -1,0 +1,29 @@
+[
+  {
+    "id":1,
+    "name":"John Doe",
+    "address":"Kolkata",
+    "commentTitle":"Exceptional Care",
+    "commentDescription":"The doctors explained everything clearly and treated me with genuine care. The staff made my recovery stress-free.",
+    "rating":5,
+    "pic":"https://i.pravatar.cc/150?img=1"
+  },
+  {
+    "id":2,
+    "name":"Sarah Jenkins",
+    "address":"Howrah",
+    "commentTitle":"Friendly Staff",
+    "commentDescription":"From reception to discharge, everyone was professional and welcoming. The entire process was smooth and organized.",
+    "rating":4,
+    "pic":"https://i.pravatar.cc/150?img=5"
+  },
+  {
+    "id":3,
+    "name":"Dev Patel",
+    "address":"Salt Lake",
+    "commentTitle":"Highly Recommended",
+    "commentDescription":"Modern facilities, clean environment, and experienced doctors. I felt safe and confident throughout my treatment.",
+    "rating":5,
+    "pic":"https://i.pravatar.cc/150?img=12"
+  }
+]

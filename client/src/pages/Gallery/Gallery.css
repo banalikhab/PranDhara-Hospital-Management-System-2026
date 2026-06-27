@@ -1,0 +1,45 @@
+.gallery-section{
+    background:#f7fbfc;
+    padding:70px 0 90px;
+}
+
+.gallery-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.gallery-heading h1{
+    font-size:42px;
+    font-weight:700;
+    color:#1f2937;
+}
+
+.gallery-heading p{
+    width:70%;
+    margin:auto;
+    color:#6b7280;
+    line-height:1.8;
+}
+
+.react-photo-album--photo{
+    overflow:hidden;
+    border-radius:18px;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.react-photo-album--photo img{
+    transition:transform .45s ease;
+}
+
+.react-photo-album--photo:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+.react-photo-album--photo:hover img{
+
+    transform:scale(1.08);
+}

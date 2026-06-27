@@ -1,0 +1,69 @@
+.auth-container{
+    min-height: calc(100vh - 230px); /* adjust if needed */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 0;
+    background:linear-gradient(to bottom,#f9fcfc,#eef7f8);
+}
+
+.auth-container .card{
+    width:400px;
+    padding:35px;
+    border:none;
+    border-radius:16px;
+    background:#fff;
+    box-shadow:0 12px 35px rgba(0, 255, 255, 0.12);
+}
+
+.auth-container h2{
+    color:teal;
+    text-align:center;
+    font-weight:700;
+    margin-bottom:10px;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.auth-container p{
+    color: gray;
+    text-align: center;
+}
+.auth-container input{
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-bottom: 2px solid #22a6a6;
+    background: transparent;
+    transition: all .25s ease;
+    font-size: 15px;
+}
+
+.auth-container input:focus{
+    outline: none;
+    border-bottom: 2px solid teal;
+    box-shadow: 0 4px 8px rgba(0,128,128,.15);
+}
+
+.auth-container .Register-button{
+    width:100%;
+    padding:10px;
+    background:teal;
+    color:white;
+    border:none;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.auth-container .Register-button:hover{
+    background:#006d6d;
+    transform:translateY(-2px);
+}
+
+.auth-container .Register-button:disabled{
+    background:#b7d8d8;
+    cursor:not-allowed;
+}
+
+.form-group{
+    margin-bottom:18px;
+}

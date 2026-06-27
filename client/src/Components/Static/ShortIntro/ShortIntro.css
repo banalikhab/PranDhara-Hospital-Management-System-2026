@@ -1,0 +1,66 @@
+.intro-container{
+    margin: 30px 0px;
+    overflow: hidden;
+}
+
+.intro-container .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container{
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.hos-image{
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: -5px 5px 10px rgba(10,10,10,0.7);
+    margin: none;
+}
+
+.intro-container .info-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right:80px ;
+    padding-left: 50px;
+}
+.info-container h1{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.info-container h6{
+    color: rgba(10,10,10,0.7);
+    margin-bottom: 30px;
+}
+.font-style{
+    font-weight: 400;
+    font-size: 15px;
+    color: grey;
+    line-height: 1.6;
+    text-align: justify;
+    padding-right: 15px;
+}
+
+.appointment-btn{
+    color:rgb(46,144,161);
+    border:1px solid rgb(46,144,161);
+    padding:10px 18px;
+    transition:.3s;
+}
+
+.appointment-btn:hover{
+    background:rgb(46,144,161);
+    color:white;
+    border-color:rgb(46,144,161);
+}

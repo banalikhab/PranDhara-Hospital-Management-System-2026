@@ -1,0 +1,125 @@
+/* ===========================
+        Slider Container
+=========================== */
+
+.slider-container{
+    margin: 30px;
+    padding-bottom: 35px;
+    border-radius: 12px;
+    overflow: visible;
+}
+
+.swiper{
+    border-radius: 12px;
+    overflow: hidden;
+    padding-bottom: 40px;   /* Space for pagination */
+}
+
+/* ===========================
+        Slider Image
+=========================== */
+
+.slider-image{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/* ===========================
+        Navigation Arrows
+=========================== */
+
+.swiper-button-prev,
+.swiper-button-next{
+    background: transparent !important;
+    color: rgba(255,255,255,.75) !important;
+    width: 55px;
+    height: 55px;
+    transition: all .3s ease;
+    filter: drop-shadow(0 3px 8px rgba(0,0,0,.4));
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after{
+    font-size: 34px;
+    font-weight: bold;
+    color: rgba(255,255,255,.75) !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover{
+    color: #fff !important;
+    transform: scale(1.18);
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after{
+    color: #fff !important;
+}
+
+/* ===========================
+        Pagination
+=========================== */
+
+.swiper-pagination{
+    position: static !important;
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    background: #bdbdbd !important;
+    opacity: 1 !important;
+    margin: 0 5px !important;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.swiper-pagination-bullet-active{
+    width: 26px;
+    height: 10px;
+    border-radius: 20px;
+    background: rgb(46,144,161) !important;
+}
+
+
+/* ===========================
+        Responsive
+=========================== */
+
+@media (max-width:768px){
+
+    .slider-container{
+        margin: 15px;
+    }
+
+    .swiper{
+        padding-bottom: 30px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev{
+        width: 40px;
+        height: 40px;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after{
+        font-size: 24px;
+    }
+
+    .swiper-pagination-bullet{
+        width: 8px;
+        height: 8px;
+    }
+
+    .swiper-pagination-bullet-active{
+        width: 22px;
+        height: 8px;
+    }
+}
