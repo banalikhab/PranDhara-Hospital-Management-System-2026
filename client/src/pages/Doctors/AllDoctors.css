@@ -1,0 +1,91 @@
+.doc-container .card{
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+}
+.doc-container a{
+    text-decoration: none;
+    color: black;
+}
+.doc-container .card-body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+.doc-container h6{
+    font-weight: bold;
+}
+.doc-container .card-footer{
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+}
+.doc-container .card:hover{
+    background-color: rgb(216,255,255);
+}
+
+.docinfo-container h6{
+    font-weight: bold;  
+}
+.docinfo-container .card-footer{
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+}
+.docinfo-container .calendar{
+    cursor: pointer;
+    width: 300px;
+    padding:20px 10px 20px;
+    margin-bottom: 20px;
+    border:1px solid teal;
+    background-color: rgb(86, 173, 173);
+}
+.doctor-card{
+    border:none;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.doctor-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+.doctor-img{
+    width:140px;
+    height:140px;
+    object-fit:cover;
+    border-radius:50%;
+    margin:20px auto 10px;
+    display:block;
+    border:4px solid #e6f8f8;
+}
+.doctor-profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid teal;
+}
+.docinfo-container{
+    margin-top:40px;
+}
+
+.docinfo-container .row{
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    background:white;
+}
+.calendar{
+    width:300px;
+    padding:10px;
+    border:2px solid teal;
+    border-radius:10px;
+    cursor:pointer;
+}
+.docinfo-container button{
+    border-radius:30px;
+    font-weight:600;
+}

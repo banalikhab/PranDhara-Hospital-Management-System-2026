@@ -9,6 +9,8 @@ import GalleryPage from './pages/Gallery/GalleryPage';
 import Register from './pages/Authentication/Register';
 import {Toaster} from 'react-hot-toast';
 import Login from './pages/Authentication/Login';
+import AllDoctors from './pages/Doctors/AllDoctors';
+import Appointment from './pages/Doctors/Appointment';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
           <Route path="/gallery" element={<GalleryPage/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/doctors" element={<AllDoctors/>}/>
+          <Route path="/doctors/:id" element={<Appointment/>}/>
         </Routes>
       </main>
       
