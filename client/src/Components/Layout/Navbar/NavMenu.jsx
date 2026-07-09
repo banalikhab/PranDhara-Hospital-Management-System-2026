@@ -3,6 +3,7 @@ import { NavLink } from "react-router";
 import Logo from "../../../assets/PrandharaLogo111.png";
 
 const NavMenu = () => {
+  const [user,setUser] = useState(true);
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-white">
@@ -81,6 +82,25 @@ const NavMenu = () => {
               </button>
 
             </div>
+            
+            {/* login User */}
+            <ul className="navbar-nav mx-auto">
+              {user ? (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/user/profile">
+                    My Account
+                  </NavLink>
+                </li>
+              ) : (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/login">
+                    Login
+                  </NavLink>
+                </li>
+              )   
+              }
+            </ul>
+
 
           </div>
 
