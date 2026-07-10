@@ -36,7 +36,7 @@ const UserProfile = () => {
                         <button className="btn btn-warning" onClick={() => setIsOpen(!isOpen)}>
                             <i className="fa-regular fa-pen-to-square"></i> Edit Profile
                         </button>
-                        <button className="btn btn-primary ms-3">
+                        <button className="btn btn-primary ms-3" onClick={() => navigate("/user/appointments")}>
                             <i class="fa-solid fa-list"></i> Appointments
                         </button>
                         <button className="btn btn-secondary ms-3">
