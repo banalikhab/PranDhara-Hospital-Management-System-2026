@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-hot-toast';
+import EditUserProfile from './EditUserProfile';
 
 
 const UserProfile = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
-  
   const handleLogout = () => {
     // Perform logout logic here (e.g., clear user session, redirect to login page)
     navigate('/login');
@@ -32,14 +33,24 @@ const UserProfile = () => {
                     </div>
                     {/* Buttons */}
                     <div className="button-container mt-5">
-                        <button className="btn btn-warning ms-3"><i className="fa-regular fa-pen-to-square"></i> Edit Profile</button>
-                        <button className="btn btn-primary ms-3"><i class="fa-solid fa-list"></i> Appointments</button>
-                        <button className="btn btn-secondary ms-3"><i class="fa-slab fa-regular fa-lock"></i> Change Password</button>
-                        <button className="btn btn-danger ms-3" onClick={handleLogout}><i class="fa-solid fa-power-off"></i> Logout</button>
+                        <button className="btn btn-warning" onClick={() => setIsOpen(!isOpen)}>
+                            <i className="fa-regular fa-pen-to-square"></i> Edit Profile
+                        </button>
+                        <button className="btn btn-primary ms-3">
+                            <i class="fa-solid fa-list"></i> Appointments
+                        </button>
+                        <button className="btn btn-secondary ms-3">
+                            <i class="fa-slab fa-regular fa-lock"></i> Change Password
+                        </button>
+                        <button className="btn btn-danger ms-3" onClick={handleLogout}>
+                            <i class="fa-solid fa-power-off"></i> Logout
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+        {/* edit model */}
+        {isOpen && (<EditUserProfile isOpen={isOpen} onClose={() => setIsOpen(false)}/>)}
     </>
   )
 };
