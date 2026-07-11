@@ -1,0 +1,15 @@
+node_modules/
+.env
+
+# Logs
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vite build
+dist/
+
+# VS Code (optional)
+.vscode/

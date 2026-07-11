@@ -1,0 +1,32 @@
+{
+  "name": "prandhara-hospital-management-system-2026",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banalikhab/PranDhara-Hospital-Management-System-2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banalikhab/PranDhara-Hospital-Management-System-2026/issues"
+  },
+  "homepage": "https://github.com/banalikhab/PranDhara-Hospital-Management-System-2026#readme",
+  "dependencies": {
+    "color": "^5.0.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "morgan": "^1.11.0",
+    "nodemon": "^3.1.14"
+  }
+}
