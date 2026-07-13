@@ -5,10 +5,14 @@ import colors from 'colors'
 import morgan from 'morgan'
 import cors from 'cors'
 import testRoutes from './routes/testRoutes.js'
+import connectDB from './config/db.js'
 // import { bgCyan } from 'colors'
 
 //conig env var
 dotenv.config()
+
+//database
+connectDB()
 
 //rest object
 const app = express()

@@ -1,4 +1,4 @@
-.editModel input{
+/* .editModel input{
     padding: 2px 5px;
     margin: 10px 0px;
 }
@@ -6,4 +6,31 @@
 .editModel select{
     width: 150px;
     text-align: center;
+} */
+
+.editModel .modal-content{
+    border-radius: 12px;
+}
+
+.editModel img{
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(46,144,161);
+    margin-bottom: 10px;
+}
+
+.editModel input,
+.editModel select{
+    padding: 10px;
+    margin: 8px 0;
+}
+
+.editModel input:focus,
+.editModel select:focus{
+    box-shadow: none;
+    border-color: rgb(46,144,161);
+}
+
+.mod-details{
+    gap: 8px;
 }

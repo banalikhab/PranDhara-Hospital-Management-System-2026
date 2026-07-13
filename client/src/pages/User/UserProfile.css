@@ -1,0 +1,17 @@
+.user-container{
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.user-details p{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.button-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
