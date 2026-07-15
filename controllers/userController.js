@@ -120,3 +120,62 @@ export const updateUser = async (req, res) =>{
         })
     }
 }
+
+
+//password reset
+export const updatePassword = async (req, res) => {
+    try {
+        //user id
+        const{id} = req.params
+        if(!id){
+            return res.status(404).send({
+                success: false,
+                message: 'UsedId not Found!'
+            })
+        }
+        //req body
+        const {oldPassword, newPassword} = req.body
+        if(!oldPassword || !newPassword){
+            return res.status(500).send({
+                success:false,
+                message:'Please Provide Old and New Password'
+            })
+        }
+        //find user
+        const user= await userModel.findById(id)
+        if(!user){
+            return res,status(402).send({
+                success:false,
+                message:'User not Found'
+            })
+        }
+        //check old password
+        const isMatch = await bcrypt.compare(oldPassword, user?.password)
+        if(!isMatch){
+            return res.status(401).send({
+                success:false,
+                message:'Incorrect Old Password'
+            })
+        }
+        //hashing
+        const salt = await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(newPassword,salt)
+
+        //update
+        user.password = hashedPassword
+        await user.save()
+
+        res.status(200).send({
+            success:true,
+            message:'Password Updated Successfully'
+        })
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            success:false,
+            message:'Error in Updating password API',
+            error
+        })
+    }
+}
