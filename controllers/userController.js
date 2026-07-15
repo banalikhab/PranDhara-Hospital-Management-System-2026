@@ -85,3 +85,38 @@ export const userLogin = async (req,res) => {
         })
     }
 }
+
+//update user details
+export const updateUser = async (req, res) =>{
+    try {
+        const{id} =req.params
+        if(!id){
+            return res.status(404).send({
+                success: false,
+                message : 'User id Not Found'
+            })            
+        }
+        const {name, phone, dob, image, gender, address} = req.body
+        const photoToBase64 = req.file && req.file.buffer.toString('base64')
+        const user = await userModel.findByIdAndUpdate(
+            id, 
+            {
+            $set:{name, dob, address, phone, gender, image:photoToBase64}
+            }, 
+            {returnOriginal:false}
+        )
+        res.status(200).send({
+            success:true,
+            message:'Profile Updated Successfully',
+            user
+        })
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            success:false,
+            message:'Something Went Wrong in Update User API',
+            error
+        })
+    }
+}
