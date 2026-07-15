@@ -18,6 +18,6 @@ router.patch('/update/:id',userAuth, upload.single('image'),updateUser)
 router.patch('/update-password/:id', userAuth, updatePassword)
 
 
-
+ 
 
 export default router
