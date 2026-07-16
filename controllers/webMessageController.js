@@ -30,20 +30,65 @@ export const createMessage = async (req, res) => {
 
 
 //Get all messages
-export const getAllMessage = async (req, res) => {
+export const getAllMessages = async (req, res) => {
     try {
         const webMessages = await webmessageModel.find({})
         res.status(201).send({
             success:true,
             message:'All Web Messages',
-            totalcount: webMessages.length,
-            webMessage
+            totalCount: webMessages.length,
+            webMessages
         })
     } catch (error) {
         console.log(error);
         res.status(500).send({
             success: false,
             message: 'Error in getting all Web Message API',
+            error
+        })
+        
+    }
+}
+
+
+
+//Delete messages
+export const deleteWebMessage = async (req, res) => {
+    try {
+        const {id} =req.params
+        if(!id){
+            return res.status(404).send({
+                success:false,
+                message: 'Please provide a Message ID'
+            })
+        }
+        // //find message
+        // const webMessage = await webmessageModel.findById(id)
+        // if(!webMessage){
+        //     return res.status(404).send({
+        //         success:false,
+        //         message: 'No Message Found with this ID'
+        //     })
+        // }
+        // res.status(201).send({
+        //     success:true,
+        //     message:'All Web Messages',
+        //     totalCount: webMessages.length,
+        //     webMessages
+        // })
+
+        //find message and delete directly
+        const webMessage = await webmessageModel.findByIdAndDelete(id)
+
+        res.status(201).send({
+            success:true,
+            message:'Messages has been deleted'
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in deleting Web Message API',
             error
         })
         

@@ -1,5 +1,6 @@
 import express from 'express'
-import { createMessage, getAllMessage } from '../controllers/webMessageController.js'
+import { createMessage, deleteWebMessage, getAllMessages } from '../controllers/webMessageController.js'
+import { isAdmin, userAuth } from '../middleware/authMiddleware.js'
 
 const router = express.Router()
 
@@ -7,9 +8,10 @@ const router = express.Router()
 router.post("/create",createMessage)
 
 //Get All Messages || Post
-router.post("/get-all",getAllMessage)
+router.get("/get-all",getAllMessages)
 
-
+//Delete Message || Delete
+router.delete('/delete/:id', userAuth, isAdmin, deleteWebMessage)
 
 
 
