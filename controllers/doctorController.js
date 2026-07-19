@@ -33,3 +33,56 @@ export const addDoctor = async (req,res) => {
         
     }
 }
+
+//Get All Doctor
+export const getAllDoctor = async (req,res) => {
+    try {
+        const doctors = await doctorModel.find({})
+        res.status(200).send({
+            sucess:true,
+            message:'All Doctors List',
+            totalCount: doctors.length,
+            doctors
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            succes:false,
+            message: 'Error in Getting All Doctor API'
+        })
+    }
+}
+
+
+//Get Doctor Details
+export const getDoctorDetails = async (req,res) => {
+    try {
+        const {id} =req.params
+        if(!id){
+            return res.status(404).send({
+                success:false,
+                message:'Please Add Doctor ID'
+            })
+        }
+        //find Doctor
+        const doctor = await doctorModel.findById(id)
+        if(!doctor){
+            return res.status(404).send({
+                success:false,
+                message:'No Doctor Found with this ID'
+            })
+        }
+        res.status(200).send({
+            sucess:true,
+            message:'Details Fetched Successfully',
+            doctor
+        })
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            succes:false,
+            message: 'Error in Getting Doctor Details API'
+        })
+    }
+}
