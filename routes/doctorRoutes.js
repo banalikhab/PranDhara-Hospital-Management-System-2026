@@ -1,7 +1,7 @@
 import express from 'express'
 import { isAdmin, userAuth } from '../middleware/authMiddleware.js'
 import upload from '../middleware/multer.js'
-import { addDoctor, getAllDoctor, getDoctorDetails } from '../controllers/doctorController.js'
+import { addDoctor, getAllDoctor, getDoctorDetails, updateDoctor } from '../controllers/doctorController.js'
 
 
 
@@ -15,5 +15,9 @@ router.get('/get-all',getAllDoctor)
 
 //Doctor Details || Get
 router.get('/get-details/:id',getDoctorDetails)
+
+//Update Doctor || Patch
+router.patch('/update/:id',userAuth,isAdmin, upload.single("image"),updateDoctor)
+
 
 export default router

@@ -1,7 +1,7 @@
 import doctorModel from "../models/doctorModel.js"
 
 
-//add doctor
+//Add doctor
 export const addDoctor = async (req,res) => {
     try {
         const{name,email,degree,fees,about,gender,phone,address, speciality,experience,dob,image} = req.body
@@ -83,6 +83,36 @@ export const getDoctorDetails = async (req,res) => {
         res.status(500).send({
             succes:false,
             message: 'Error in Getting Doctor Details API'
+        })
+    }
+}
+
+
+//update doctor
+export const updateDoctor = async (req, res) => {
+    try {
+        const {id} =req.params
+        if(!id){
+            return res.status(404).send({
+                success:false,
+                message:'Please Add Doctor ID'
+            })
+        }
+        const data = req.body
+        const photoBase64 = req.file && req.file.buffer.toString('base64')
+        const doctor = await doctorModel.findByIdAndUpdate(id,
+            {$set:data},
+            {returnOriginal:false})
+        res.status(200).send({
+            sucess:true,
+            message:'Doctor Details Updated',
+            doctor
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            succes:false,
+            message: 'Error in Updating Doctor Details API'
         })
     }
 }
