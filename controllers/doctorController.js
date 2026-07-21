@@ -116,3 +116,29 @@ export const updateDoctor = async (req, res) => {
         })
     }
 }
+
+
+
+//Delete doctor
+export const deleteDoctor = async (req,res) => {
+    try {
+        const {id} =req.params
+        if(!id){
+            return res.status(404).send({
+                success:false,
+                message:'Please Add Doctor ID'
+            })
+        }
+        await doctorModel.findByIdAndDelete(id)
+        res.status(200).send({
+            success: true,
+            message: 'Doctor has been Deleted'
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            succes:false,
+            message: 'Error in Deleting Doctor Details API'
+        })
+    }
+}

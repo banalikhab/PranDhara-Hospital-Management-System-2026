@@ -1,7 +1,7 @@
 import express from 'express'
 import { isAdmin, userAuth } from '../middleware/authMiddleware.js'
 import upload from '../middleware/multer.js'
-import { addDoctor, getAllDoctor, getDoctorDetails, updateDoctor } from '../controllers/doctorController.js'
+import { addDoctor, deleteDoctor, getAllDoctor, getDoctorDetails, updateDoctor } from '../controllers/doctorController.js'
 
 
 
@@ -18,6 +18,9 @@ router.get('/get-details/:id',getDoctorDetails)
 
 //Update Doctor || Patch
 router.patch('/update/:id',userAuth,isAdmin, upload.single("image"),updateDoctor)
+
+//Delete Doctor || Patch
+router.delete('/delete/:id',userAuth,isAdmin, deleteDoctor)
 
 
 export default router
